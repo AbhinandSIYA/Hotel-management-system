@@ -1,13 +1,14 @@
 <div class="admin">
 
 
-    <div class="sidenav">
-        <a href="/dashboard-admin" >Dashboard</a>
-        <a href="/payment-admin" class="active" >Payment</a>
-        <a href="/createRoom-admin">Create Room</a>
+    <div class="sidenav nav-item">
+        <a href="/dashboard-admin" class="nav-link" >Dashboard</a>
+        <a href="/payment-admin" class="nav-link">Payment</a>
+        <a href="/createRoom-admin" class="nav-link active">Create Room</a>
         <div class="navbtn">
             <a href=""><button class="btn btn-success" type="button">New User</button></a>
         </div>
+
     </div>
 
 
@@ -15,7 +16,7 @@
 
         <div class="container pay row">
 
-            <div class="d-flex col-12 col-md-12">
+            <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="roomno">Room No</label>
@@ -24,7 +25,7 @@
 
             </div>
 
-            <div class="d-flex  col-12 col-md-12">
+            <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="persons">Persons</label>
@@ -33,7 +34,7 @@
 
             </div>
 
-            <div class="d-flex  col-12 col-md-12">
+            <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="">AC/Non AC <b>:</b></label>
@@ -43,7 +44,7 @@
 
             </div>
 
-            <div class="d-flex  col-12 col-md-12">
+            <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="rent">Rent</label>
@@ -52,39 +53,15 @@
 
             </div>
 
-            <div class="d-flex  col-12 col-md-12">
+            <div class="col-12 col-md-12 d-flex align-items-center">
 
                 <div class="col-6 col-md-6">
-                    <label for="advance">Advance</label>
+
+                    <button type="submit" class="paybtn btn btn-warning">Create Room</button>
+
                 </div>
-                <input type="number" name="advance">
-
-            </div>
-
-            <div class="d-flex  col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
-                    <label for="amtp">Amount To Pay</label>
-                </div>
-                <input type="number" name="amtp">
-
-            </div>
-
-            <div  class="col-12 col-md-12 d-flex align-items-center">
-
-                <div class="col-4 col-md-4">
-
-                    <button type="submit" class="paybtn btn btn-warning">Check In</button>
-
-                </div>
-
-                <div class="col-4 col-md-4">
-
-                    <button type="submit" class="paybtn btn btn-warning">Check Out</button>
-
-                </div>
-
-                <div class="col-4 col-md-4">
 
                     <button type="button" class="paybtn btn btn-info">Cancel</button>
 
