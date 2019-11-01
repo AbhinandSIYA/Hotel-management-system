@@ -24,6 +24,8 @@ body {
 img{
   height: 125px;
   width: 125px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
 }
 
 
@@ -32,21 +34,39 @@ img{
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
-.table{
-  height: 400px;
-  overflow: scroll;
+/*.table{*/
+/*  height: 400px;*/
+/*  overflow: scroll;*/
+/*}*/
+/*.tabdiv{*/
+/*  height: 400px;*/
+/*  overflow: scroll;*/
+/*  overflow-x: hidden;*/
+/*}*/
+
+
+tbody {
+  display:block;
+  height:400px;
+  overflow:auto;
 }
-.tabdiv{
-  height: 400px;
-  overflow: scroll;
-  overflow-x: hidden;
+thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
 }
+thead {
+  width: calc( 100% - 1em )
+}
+
+
 .dashboard{
   margin-left: 160px;
   height: 850px;
 }
 a.active{
   color: #f1ba11;
+  padding-left: 25px;
 }
 
 .pay {
@@ -81,3 +101,33 @@ a.active{
 .headtable{
   margin-bottom:0;
 }
+.thtab{
+    height: 45px;
+}
+
+.bttn{
+  width: 125px;
+}
+
+.cust{
+  height: auto;
+  width: 80%;
+  background-color: #111111;
+  color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.custleft{
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.custfld{
+  margin-top: 20px;
+}
+
+.checkinbtn{
+  width: 120px;
+  margin-top: 20px;
+}
+

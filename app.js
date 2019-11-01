@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 let dashboardRouter=require('./routes/admin/dashboard-admin');
 let paymentRouter=require('./routes/admin/payment-admin');
 let createRoomRouter=require('./routes/admin/createRoom-admin');
+let customerRouter=require('./routes/admin/customer');
 var app = express();
 
 // view engine setup
@@ -26,6 +27,7 @@ app.use('/users', usersRouter);
 app.use('/dashboard-admin',dashboardRouter);
 app.use('/payment-admin',paymentRouter);
 app.use('/createRoom-admin',createRoomRouter);
+app.use('/customer',customerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
