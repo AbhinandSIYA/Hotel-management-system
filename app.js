@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+let db=require('./dbconfig/db-connect');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let dashboardRouter=require('./routes/admin/dashboard-admin');
@@ -43,6 +45,15 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+db.connect(function (error) {
+  if (error){
+    console.log('Unable to connect database');
+    process.exit(1);
+  }else {
+    console.log('Connected Successfully')
+  }
 });
 
 module.exports = app;

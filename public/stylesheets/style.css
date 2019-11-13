@@ -61,7 +61,7 @@ thead {
 
 
 .dashboard{
-  margin-left: 160px;
+  /*margin-left: 160px;*/
   height: 850px;
 }
 a.active{
@@ -71,7 +71,6 @@ a.active{
 
 .pay {
   height: 450px;
-  width: 80%;
   background-color: #111111;
   color: #f1f1f1;
   display: grid;
@@ -128,6 +127,13 @@ a.active{
 
 .checkinbtn{
   width: 120px;
-  margin-top: 20px;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 
+form{
+  width:50%;
+}
+.customer-form{
+  width: 75%;
+}

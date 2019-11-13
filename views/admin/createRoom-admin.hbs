@@ -23,16 +23,17 @@
     </div>
 
 
-    <div class="dashboard col-10 col-md-8 col-lg-10 d-flex align-items-center justify-content-center">
+    <div class="dashboard col-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
 
-        <div class="container pay row">
+      <form method="post" id="room-form" action="/createRoom-admin/createRoom">
+        <div class="container pay">
 
             <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="roomno">Room No</label>
                 </div>
-                <input type="text" value="" name="noomno">
+                <input type="text" value="" name="roomno">
 
             </div>
 
@@ -60,7 +61,7 @@
                 <div class="col-6 col-md-6">
                     <label for="rent">Rent</label>
                 </div>
-                <input type="number">
+                <input type="number" name="rent" value="">
 
             </div>
 
@@ -82,6 +83,7 @@
 
 
         </div>
+      </form>
     </div>
 
 </div>
