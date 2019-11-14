@@ -9,14 +9,14 @@ let dbConnect=require('../../dbconfig/db-connect');
 // });
 
 router.get('/',function (req,res) {
-    dbConnect.get().collection('CreateRoom').find().toArray(function (error,result) {
+    dbConnect.get().collection('CreateRoom','CustomerDetails').find().toArray(function (error,result) {
         if (error){
             console.log('error'+error)
         }else {
-            console.log('displaying on dashboard'+result)
+            console.log('displaying on dashboard'+result);
             res.render('admin/dashboard-admin',{rooms:result});
         }
-    })
-})
+    });
+});
 
 module.exports = router;

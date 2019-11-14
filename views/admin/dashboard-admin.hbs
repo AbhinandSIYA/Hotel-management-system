@@ -50,7 +50,7 @@
                         <td><form action="/customer">
                             <input class="hiddenid" type="text" style="visibility: hidden" name="id" value="{{this._id}}">
                             <input type="submit" class="btn btn-warning" value="Check In">
-                        </form></a></td>
+                        </form></td>
                     </tr>
                     {{/each}}
 
@@ -83,86 +83,18 @@
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td>505</td>
-                        <td>John</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>11,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>507</td>
-                        <td>Mathew</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>10,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>508</td>
-                        <td>Ramnadh</td>
-                        <td>4</td>
-                        <td>Non-AC</td>
-                        <td>15,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>505</td>
-                        <td>Joseph Alex</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>11,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>507</td>
-                        <td>Alvin</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>10,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>508</td>
-                        <td>Abraham</td>
-                        <td>4</td>
-                        <td>Non-AC</td>
-                        <td>15,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>  <tr>
-                        <td>505</td>
-                        <td>Mini</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>11,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>507</td>
-                        <td>Sam</td>
-                        <td>2</td>
-                        <td>AC</td>
-                        <td>10,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>508</td>
-                        <td>Jojo</td>
-                        <td>4</td>
-                        <td>Non-AC</td>
-                        <td>15,000</td>
-                        <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
-                    </tr>
+                    {{#each rooms}}
+                        <tr>
+                            <td>{{this.roomno}}</td>
+                            <td>{{this.cstname}}</td>
+                            <td>{{this.persons}}</td>
+                            <td>{{this.ac}}</td>
+                            <td>{{this.rent}}</td>
+                            <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
+                            <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
+                        </tr>
+                    {{/each}}
+
 
                     </tbody>
                 </table>
