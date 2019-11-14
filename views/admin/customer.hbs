@@ -25,18 +25,23 @@
 
     <div class="dashboard col-12 col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
 
-     <form method="post" id="customer-form" action="" class="customer-form">
+     <form method="post" id="customer-form" action="/customer/customer-details" class="customer-form">
 
        <div class="container cust d-flex col-12 col-sm-12 col-md-12 col-lg-12">
 
            <div class="custleft  col-12 col-sm-12 col-md-6">
+
+               <input style="display: none" type="text" class="form-control" name="id" value="{{data._id}}">
 
                <div class="d-flex custfld col-12 col-md-12">
 
                    <div class="col-6 col-md-6">
                        <label for="cstname">Name</label>
                    </div>
-                   <input type="text" value="" name="cstname">
+                   <div>
+                       <input type="text" id="cstname" value="" name="cstname">
+                   </div>
+
 
                </div>
 
@@ -45,7 +50,10 @@
                    <div class="col-6 col-md-6">
                        <label for="mobile">Mobile</label>
                    </div>
-                   <input type="text" value="" name="mobile">
+                   <div>
+                       <input type="text" value="" id="mobile" name="mobile">
+                   </div>
+
 
                </div>
 
@@ -54,16 +62,22 @@
                    <div class="col-6 col-md-6">
                        <label for="email">E-Mail</label>
                    </div>
-                   <input type="email" value="" name="email">
+                   <div>
+                       <input type="email" value="" id="email" name="email">
+                   </div>
+
 
                </div>
 
                <div class="d-flex custfld col-12 col-sm-12 col-md-12">
 
                    <div class="col-6 col-md-6">
-                       <label for="sadrs">Street Address</label>
+                       <label for="streetAddress">Street Address</label>
                    </div>
-                   <input type="text" value="" name="sadrs">
+                   <div>
+                       <input type="text" value="" id="streetAddress" name="streetAddress">
+                   </div>
+
 
                </div>
 
@@ -72,7 +86,10 @@
                    <div class="col-6 col-md-6">
                        <label for="landmark">Landmark</label>
                    </div>
-                   <input type="text" value="" name="landmark">
+                   <div>
+                       <input type="text" value="" id="landmark" name="landmark">
+                   </div>
+
 
                </div>
 
@@ -81,7 +98,10 @@
                    <div class="col-6 col-md-6">
                        <label for="city">City</label>
                    </div>
-                   <input type="text" value="" name="city">
+                   <div>
+                       <input type="text" value="" id="city" name="city">
+                   </div>
+
 
                </div>
 
@@ -90,7 +110,10 @@
                    <div class="col-6 col-md-6">
                        <label for="state">State</label>
                    </div>
-                   <input type="text" value="" name="state">
+                   <div>
+                       <input type="text" value="" id="state" name="state">
+                   </div>
+
 
                </div>
 
@@ -99,7 +122,10 @@
                    <div class="col-6 col-md-6">
                        <label for="country">Country</label>
                    </div>
-                   <input type="text" value="" name="country">
+                   <div>
+                       <input type="text" value="" id="country" name="country">
+                   </div>
+
 
                </div>
 
@@ -115,7 +141,7 @@
                    <div class="col-6 col-md-6">
                        <label for="roomno">Room No</label>
                    </div>
-                   <input type="text" value="" name="noomno">
+                   <input type="text" value="{{data.roomno}}" name="roomno" readonly class="font-weight-bolder text-center">
 
                </div>
 
@@ -124,17 +150,25 @@
                    <div class="col-6 col-md-6">
                        <label for="persons">Persons</label>
                    </div>
-                   <input type="text" value="" name="persons" >
+                   <input type="text" value="{{data.persons}}" name="persons" readonly class="font-weight-bolder text-center" >
 
                </div>
 
                <div class="d-flex custfld col-12 col-sm-12 col-md-12">
 
+                   {{#if Ac}}
                    <div class="col-6 col-md-6">
                        <label for="">AC/Non AC <b>:</b></label>
                    </div>
-                   AC<input type="radio" name="ac" class="radiobtn" value="AC">
-                   Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC">
+                   AC<input type="radio" name="ac" class="radiobtn" value="AC" checked>
+                   Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC" disabled>
+                   {{else}}
+                       <div class="col-6 col-md-6">
+                           <label for="">AC/Non AC <b>:</b></label>
+                       </div>
+                       AC<input type="radio" name="ac" class="radiobtn" value="AC" disabled>
+                       Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC" checked >
+                   {{/if}}
 
                </div>
 
@@ -143,7 +177,7 @@
                    <div class="col-6 col-md-6">
                        <label for="rent">Rent</label>
                    </div>
-                   <input type="number">
+                   <input type="number" name="rent" value="{{data.rent}}" readonly class="font-weight-bolder text-center">
 
                </div>
 

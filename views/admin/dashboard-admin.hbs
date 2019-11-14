@@ -47,7 +47,10 @@
                         <td>{{this.persons}}</td>
                         <td>{{this.ac}}</td>
                         <td>{{this.rent}}</td>
-                        <td><a href="/customer"><button type="button" class="btn btn-warning">Check In</button></a></td>
+                        <td><form action="/customer">
+                            <input class="hiddenid" type="text" style="visibility: hidden" name="id" value="{{this._id}}">
+                            <input type="submit" class="btn btn-warning" value="Check In">
+                        </form></a></td>
                     </tr>
                     {{/each}}
 

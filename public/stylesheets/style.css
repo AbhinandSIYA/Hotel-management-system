@@ -137,3 +137,11 @@ form{
 .customer-form{
   width: 75%;
 }
+
+.hiddenid{
+  display: none;
+}
+
+.error{
+  color: red;
+}
