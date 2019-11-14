@@ -7,15 +7,49 @@ $().ready(function () {
         disabledFormFilter : 'form.toggle-disabled',
 
         rules: {
-            _roomno: {
+            roomno: {
                 required: true,
-                minlength: 3
+                min:0
+            },
+            persons:{
+                required:true,
+                min:0
+            },
+            rent:{
+                required:true,
+                min:0
+            },
+            ac:{
+                required:true
             }
         },
         messages: {
-            _roomno : {
-                required: "We need your email address to contact you",
-                minlength: jQuery.validator.format("At least {0} characters required!")
+            roomno : {
+                required: "Please fill this field",
+                min:"Please enter a number"
+            },
+            persons: {
+                required:"Please fill this field",
+                min:"Please enter a number"
+            },
+            rent: {
+                required:"Please fill this field",
+                min:"Please enter a number"
+            },
+            ac: {
+                required:"Please select an option"
+            }
+        },
+
+        errorPlacement: function(error, element)
+        {
+            if ( element.is(":radio") )
+            {
+                error.appendTo( element.parents('.opt') );
+            }
+            else
+            { // This is the default behavior
+                error.insertAfter( element );
             }
         }
     });
@@ -33,6 +67,7 @@ $().ready(function () {
             },
             mobile:{
                 required:true,
+                min:0,
                 minlength:6,
                 maxlength:20,
             },
@@ -60,8 +95,9 @@ $().ready(function () {
             },
             mobile: {
                  required:"Please fill this field",
-                minlength:"Enter mobile number",
-                maxlength: "Enter mobile number"
+                min:"Please enter mobile number",
+                minlength:"Please enter mobile number",
+                maxlength: "Please enter mobile number"
             },
             email:{
                  required:"Please fill this field",

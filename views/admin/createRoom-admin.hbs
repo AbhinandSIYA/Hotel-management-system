@@ -33,7 +33,10 @@
                 <div class="col-6 col-md-6">
                     <label for="roomno">Room No</label>
                 </div>
-                <input type="text" value="" name="roomno">
+                <div>
+                    <input type="text" value="" id="roomno" name="roomno">
+                </div>
+
 
             </div>
 
@@ -42,17 +45,23 @@
                 <div class="col-6 col-md-6">
                     <label for="persons">Persons</label>
                 </div>
-                <input type="text" value="" name="persons" >
+                <div>
+                    <input type="text" value="" id="persons" name="persons" >
+                </div>
+
 
             </div>
 
             <div class="d-flex flds col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
-                    <label for="">AC/Non AC <b>:</b></label>
+                    <label for="ac">AC/Non AC <b>:</b></label>
                 </div>
-                AC<input type="radio" name="ac" class="radiobtn" value="AC">
-                Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC">
+                <div class="opt">
+                    <label for="">AC<input type="radio" name="ac" id="ac" class="radiobtn" value="AC"></label>
+                    <label for="">Non AC<input type="radio" name="ac" id="ac" class="radiobtn" value="Non AC"></label>
+                </div>
+
 
             </div>
 
@@ -61,7 +70,10 @@
                 <div class="col-6 col-md-6">
                     <label for="rent">Rent</label>
                 </div>
-                <input type="number" name="rent" value="">
+                <div>
+                    <input type="text" id="rent" name="rent" value="">
+                </div>
+
 
             </div>
 
@@ -75,7 +87,7 @@
 
                 <div class="col-6 col-md-6">
 
-                    <button type="button" class="paybtn btn btn-info">Cancel</button>
+                    <a href="/createRoom-admin"><button type="button"  class="paybtn btn btn-info">Cancel</button></a>
 
                 </div>
 
