@@ -31,6 +31,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/customer-details',function (req,res) {
 
+    let id=req.body.id;
+
     let roomNo=req.body.roomno;
     let persons=req.body.persons;
     let ac=req.body.ac;
@@ -68,7 +70,17 @@ router.post('/customer-details',function (req,res) {
             console.log('successfully inserted customer details'+result);
             res.redirect('/dashboard-admin');
         }
+    });
+
+
+    dbConnect.get().collection('CreateRoom').deleteOne({_id:objectId(id)},function (error,result) {
+        if (error){
+            console.log('error'+error)
+        }else {
+            console.log('Deleted from available rooms'+result);
+        }
     })
 });
+
 
 module.exports = router;
