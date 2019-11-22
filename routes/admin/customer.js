@@ -2,12 +2,18 @@ var express = require('express');
 var router = express.Router();
 let objectId=require('mongodb').ObjectId;
 
+
 let dbConnect=require('../../dbconfig/db-connect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
     let id=req.query.id;
+
+
+
+
+
     console.log('customer id is................................................       '+id);
 
     dbConnect.get().collection('CreateRoom').findOne({_id:objectId(id)},function (error,result) {
@@ -47,6 +53,12 @@ router.post('/customer-details',function (req,res) {
     let city=req.body.city;
     let state=req.body.state;
     let country=req.body.country;
+
+    let cIn=req.body.checkInDate;
+    let cOut=req.body.checkOutDate;
+
+    console.log('cin~~~~~~~'+cIn);
+    console.log('cout~~~~~~~~~~~'+cOut);
 
     dbConnect.get().collection('CustomerDetails').insertOne({
             cstname:custName,

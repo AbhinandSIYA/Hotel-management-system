@@ -10,27 +10,6 @@ let dbConnect=require('../../dbconfig/db-connect');
 //     res.render('admin/dashboard-admin');
 // });
 
-/*router.get('/',function (req,res,next) {
-    dbConnect.get().collection('CreateRoom').find().toArray(function (error, result) {
-        if (error) {
-            console.log('error' + error)
-        } else {
-            console.log('displaying on dashboard' + result);
-            res.render('admin/dashboard-admin', {rooms: result});
-        }
-    }),
-
-    dbConnect.get().collection('CustomerDetails').find().toArray(function (error,result) {
-        if (error){
-            console.log('error'+error)
-        }
-        else {
-            console.log('Displaying on closed rooms'+result);
-            res.render('admin/dashboard-admin',{clsrooms:result})
-        }
-    })
-});*/
-
 router.get('/',function (req,res,next) {
 
     let locals = {};

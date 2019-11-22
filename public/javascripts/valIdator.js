@@ -86,6 +86,12 @@ $().ready(function () {
             },
             country:{
                 required:true
+            },
+            checkInDate:{
+                required:true
+            },
+            checkOutDate:{
+                required:true
             }
         },
         messages: {
@@ -113,6 +119,12 @@ $().ready(function () {
                  required:"Please fill this field"
             },
             country: {
+                 required:"Please fill this field"
+            },
+            checkInDate: {
+                 required:"Please fill this field"
+            },
+            checkOutDate: {
                  required:"Please fill this field"
             }
         }
