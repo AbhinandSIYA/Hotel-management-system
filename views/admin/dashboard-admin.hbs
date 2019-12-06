@@ -90,7 +90,10 @@
                             <td>{{this.persons}}</td>
                             <td>{{this.ac}}</td>
                             <td>{{this.rent}}</td>
-                            <td><a href="/payment-admin"><button type="button" class="btn btn-warning">Check Out</button></a></td>
+                            <td><form action="/payment-admin">
+                                <input class="hiddenid" type="text" style="visibility: hidden" name="id" value="{{this._id}}">
+                                <input type="submit" class="btn btn-warning" value="Check Out" >
+                            </form></td>
                             <td><a href="/customer"><button type="button" class="btn btn-warning">Confirm</button></a></td>
                         </tr>
                     {{/each}}

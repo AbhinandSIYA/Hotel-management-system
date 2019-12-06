@@ -176,7 +176,7 @@
                    <div class="col-6 col-md-6">
                        <label for="checkInDate">Check In</label>
                    </div>
-                   <input type="date" name="checkInDate" id="checkInDate" onchange="cal()">
+                   <input type="date" name="checkInDate" id="checkInDate" onchange="calc()">
                </div>
 
 
@@ -184,7 +184,7 @@
                    <div class="col-6 col-md-6">
                        <label for="checkOutDate">Check Out</label>
                    </div>
-                   <input type="date" name="checkOutDate" id="checkOutDate" onchange="cal()">
+                   <input type="date" name="checkOutDate" id="checkOutDate" onchange="calc()">
                </div>
 
                <div class="d-flex custfld col-12 col-sm-12 col-md-12">
@@ -192,7 +192,7 @@
                    <div class="col-6 col-md-6">
                        <label for="rent">Rent</label>
                    </div>
-                   <input type="hidden" id="rentDash" value="{{data.rent}}" onchange="cal()">
+                   <input style="display: none" type="hidden" id="rentDash" value="{{data.rent}}" onchange="calc()">
                    <input type="number" name="rent" id="rent" value="" readonly class="font-weight-bolder text-center">
 
                </div>
@@ -202,7 +202,7 @@
                    <div class="col-6 col-md-6">
                        <label for="advance">Advance</label>
                    </div>
-                   <input type="number" name="advance">
+                   <input type="number" name="adv" value="" id="advance">
 
                </div>
 
@@ -217,7 +217,7 @@
 
                    <div class="col-12 col-md-6 col-lg-6">
 
-                       <button type="submit" class="checkinbtn btn btn-warning">Check In</button>
+                       <button type="submit" class="checkinbtn btn btn-warning" >Check In</button>
 
                    </div>
 

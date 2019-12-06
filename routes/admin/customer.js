@@ -73,7 +73,9 @@ router.post('/customer-details',function (req,res) {
             persons:persons,
             ac:ac,
             rent:rent,
-            adv,adv
+            adv:adv,
+            checkInDate:cIn,
+            checkOutDate:cOut
         },
         function (error,result) {
         if (error){

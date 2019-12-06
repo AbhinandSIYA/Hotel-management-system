@@ -129,4 +129,20 @@ $().ready(function () {
             }
         }
     });
-})
+
+    $("#pay-form").validate({
+
+        rules:{
+            amtp:{
+                required:true
+            }
+        },
+        messages:{
+            required:"Please fill the field"
+        }
+
+    })
+
+});
+
+

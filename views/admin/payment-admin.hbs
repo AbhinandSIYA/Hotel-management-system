@@ -25,15 +25,17 @@
 
     <div class="dashboard col-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
 
-        <form method="post" id="pay-form" action="">
+        <form method="post" id="pay-form" action="/payment-admin/payment-details">
         <div class="container pay">
-
+            <input style="display: none" type="text" class="form-control" name="id" value="{{data._id}}">
+            <input style="display: none" type="date" class="form-control" id="checkInDate2" name="checkIn" value="{{data.checkInDate}}" >
+            <input style="display: none" type="date" class="form-control" id="checkOutDate2" name="checkOut" value="{{data.checkOutDate}}">
             <div class="d-flex col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
                     <label for="roomno">Room No</label>
                 </div>
-                <input type="text" value="" name="noomno">
+                <input type="text" value="{{data.roomno}}" name="roomno" readonly class="font-weight-bolder text-center">
 
             </div>
 
@@ -42,26 +44,35 @@
                 <div class="col-6 col-md-6">
                     <label for="persons">Persons</label>
                 </div>
-                <input type="text" value="" name="persons" >
+                <input type="text" value="{{data.persons}}" name="persons" readonly class="font-weight-bolder text-center" >
+
+            </div>
+
+            <div class="d-flex  col-12 col-md-12">
+
+                {{#if Ac}}
+                    <div class="col-6 col-md-6">
+                        <label for="">AC/Non AC <b>:</b></label>
+                    </div>
+                    AC<input type="radio" name="ac" class="radiobtn" value="AC" checked>
+                    Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC" disabled>
+                {{else}}
+                    <div class="col-6 col-md-6">
+                        <label for="">AC/Non AC <b>:</b></label>
+                    </div>
+                    AC<input type="radio" name="ac" class="radiobtn" value="AC" disabled>
+                    Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC" checked >
+                {{/if}}
 
             </div>
 
             <div class="d-flex  col-12 col-md-12">
 
                 <div class="col-6 col-md-6">
-                    <label for="">AC/Non AC <b>:</b></label>
+                    <label for="">Rent</label>
                 </div>
-                AC<input type="radio" name="ac" class="radiobtn" value="AC">
-                Non AC<input type="radio" name="ac" class="radiobtn" value="Non AC">
-
-            </div>
-
-            <div class="d-flex  col-12 col-md-12">
-
-                <div class="col-6 col-md-6">
-                    <label for="rent">Rent</label>
-                </div>
-                <input type="number">
+                <input  value="{{data.rent}}" readonly id="rentRoom" class="font-weight-bolder text-center">
+               <input style="display: none" type="number"  id="rentOriginal" name="rent"  value="" >
 
             </div>
 
@@ -70,7 +81,7 @@
                 <div class="col-6 col-md-6">
                     <label for="advance">Advance</label>
                 </div>
-                <input type="number" name="advance">
+                <input type="number" name="adv" id="advance" value="{{data.adv}}" readonly class="font-weight-bolder text-center">
 
             </div>
 
@@ -79,7 +90,9 @@
                 <div class="col-6 col-md-6">
                     <label for="amtp">Amount To Pay</label>
                 </div>
-                <input type="number" name="amtp">
+                <div>
+                    <input type="number" name="amtp" id="amtp" value="" class="font-weight-bolder text-center">
+                </div>
 
             </div>
 
@@ -87,14 +100,13 @@
 
                 <div class="col-4 col-md-4">
 
-                    <button type="submit" class="paybtn btn btn-warning">Check In</button>
+                    <button type="submit" class="paybtn btn btn-success">Print</button>
 
                 </div>
 
                 <div class="col-4 col-md-4">
 
-                    <button type="submit" class="paybtn btn btn-warning">Check Out</button>
-
+                    <button type="submit" class="paybtn btn btn-warning" onclick="cal()">Check Out</button>
                 </div>
 
                 <div class="col-4 col-md-4">
