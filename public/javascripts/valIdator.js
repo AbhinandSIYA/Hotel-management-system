@@ -138,9 +138,28 @@ $().ready(function () {
             }
         },
         messages:{
-            required:"Please fill the field"
+            required:"Please fill this field"
         }
 
+    });
+
+    $("#adminSignIn-form").validate({
+        rules:{
+          username:{
+              required:true
+          }  ,
+            password:{
+              required:true
+            }
+        },
+        messages:{
+            username: {
+                required:"Please fill this field"
+            },
+            password: {
+                required:"Please fill this field"
+            }
+        }
     })
 
 });
